@@ -5,7 +5,7 @@ import hotdog from "./hotdog.svg";
 
 const Pixel = (props) => {
     const [pixelColor, setPixelColor] = useState();
-    const [show, setShow] = useState(0);
+    const [show, setShow] = useState("hidden");
     const element = (e) => {
         if (e === "kanistra")
           return <img src={kanistra} alt="kanistra" style={styles.match} />;
@@ -18,11 +18,11 @@ const Pixel = (props) => {
             background:pixelColor
         },
         match: {
-            opacity:show
+          visibility:show
         }
     }
     let newPixel = () => {
-        setShow(1);
+        setShow("visible");
         setPixelColor("rgb(169, 142, 197)");
         props.click(props.id);
     }
